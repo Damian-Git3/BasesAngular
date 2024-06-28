@@ -1,0 +1,71 @@
+<p-dialog
+  [header]="titulo"
+  [modal]="true"
+  [closable]="true"
+  [closeOnEscape]="true"
+  [(visible)]="display"
+>
+  <div class="field">
+    <label for="nombre">NOMBRE</label>
+    <input
+      pInputText
+      [(ngModel)]="empleado.nombre"
+      id="nombre"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+  <div class="field">
+    <label for="correo">CORRREO</label>
+    <input
+      pInputText
+      [(ngModel)]="empleado.correo"
+      id="correo"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+  <div class="field">
+    <label for="correo">TELEFONO</label>
+    <input
+      pInputText
+      id="correo"
+      type="text"
+      [(ngModel)]="empleado.telefono"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+  <div class="field">
+    <label for="correo">FECHA DE NACIMIENTO</label>
+    <p-calendar
+      [(ngModel)]="empleado.fechaNacimiento"
+      [showIcon]="true"
+      [showOnFocus]="false"
+      inputId="buttondisplay"
+      styleClass="w-full"
+      [touchUI]="true"
+      dateFormat="dd.mm.yy"
+    />
+  </div>
+  <div class="field">
+    <label for="">SEXO</label>
+    <div *ngFor="let opcion of opciones" class="field-checkbox">
+      <p-radioButton
+        [inputId]="opcion.key"
+        [(ngModel)]="empleado.sexo"
+        [value]="opcion.valor"
+      />
+      <label [for]="opcion.key" class="ml-2">
+        {{ opcion.nombre }}
+      </label>
+    </div>
+  </div>
+  <div class="field grid gap-1 justify-content-center">
+    <button
+      pButton
+      [label]="btnLabel"
+      (click)="actualizar ? actualizarEmpleado() : guardar()"
+    ></button>
+    <p-button (click)="hide()" label="CERRAR"></p-button>
+  </div>
+</p-dialog>

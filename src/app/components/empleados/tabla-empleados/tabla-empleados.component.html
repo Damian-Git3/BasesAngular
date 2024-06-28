@@ -1,0 +1,48 @@
+<p-card header="EMPLEADOS">
+  <p-table [value]="empleados" [paginator]="true" [rows]="5">
+
+    <ng-template pTemplate="caption">
+      <div class="grid">
+        <div class="col-1">
+          <p-button
+            icon="pi pi-plus-circle"
+            label="AGREGAR"
+            (click)="modalEmpleados.show()"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>CORREO</th>
+        <th>TELEFONO</th>
+        <th>FECHA DE NACIMIENTO</th>
+        <th>SEXO</th>
+        <th>ACCIONES</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-empleado>
+      <tr (dblclick)="modalEmpleados.show(empleado.idEmpleado)">
+        <td>{{ empleado.idEmpleado }}</td>
+        <td>{{ empleado.nombre }}</td>
+        <td>{{ empleado.correo }}</td>
+        <td>{{ empleado.telefono }}</td>
+        <td>{{ empleado.fechaNacimiento }}</td>
+        <td>{{ empleado.sexo }}</td>
+        <td>
+          <p-button
+            icon="pi pi-trash"
+            (onClick)="eliminarEmpleado(empleado.idEmpleado)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</p-card>
+
+<app-modal-empleados #modalEmpleados></app-modal-empleados>
