@@ -1,29 +1,33 @@
 import { Routes } from '@angular/router';
+import { SharedModule } from './components/shared/shared.module';
+import { ProductosModule } from './components/productos/productos.module';
 import { ClientesModule } from './components/clientes/clientes.module';
-import { EmpleadosModule } from './components/empleados/empleados.module';
-import { GiphyModule } from './components/giphy/giphy.module';
-import { TareasModule } from './components/tareas/tareas.module';
+import { ContactoComponent } from './components/shared/contacto/contacto.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'inicio',
     pathMatch: 'full',
+  },
+
+  {
+    path: 'inicio',
+    loadChildren: () => SharedModule,
+  },
+  {
+    path: 'productos',
+    loadChildren: () => ProductosModule,
   },
   {
     path: 'clientes',
     loadChildren: () => ClientesModule,
+  }, {
+    path: 'contacto',
+    component: ContactoComponent,
   },
   {
-    path: 'empleados',
-    loadChildren: () => EmpleadosModule
+    path: '**',
+    redirectTo: 'inicio',
   },
-  {
-    path: 'giphy',
-    loadChildren: () => GiphyModule
-  },
-  {
-    path: 'tareas',
-    loadChildren: () => TareasModule
-  }
 ];

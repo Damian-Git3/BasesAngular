@@ -17,7 +17,7 @@ export class ListadoImagenesComponent {
 
   obtenerImagenes() {
     console.log('Obteniendo imagenes');
-    // this.resultados = this.giphyService.obtenerGifs();
+    this.resultados = this.giphyService.obtenerGifs();
 
   }
 }

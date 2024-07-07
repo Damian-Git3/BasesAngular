@@ -1,21 +1,5 @@
-@import "primeicons/primeicons.css";
-@import "primeng/resources/primeng.min.css";
-@import "primeng/resources/themes/aura-light-blue/theme.css";
-@import "primeflex/primeflex.css";
-
-
-
-body {
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-
-}
-
-:host ::ng-deep .p-input-icon-left > input {
-    padding-left: 2.5rem;
+:host ::ng-deep input {
+    padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -30,4 +14,3 @@ body {
     appearance: none;
     border-radius: 6px;
 }
-

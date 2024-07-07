@@ -1,22 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableModule } from 'primeng/table';
-import { EmpleadosRoutes } from './empleados.routing';
-import { TablaEmpleadosComponent } from './tabla-empleados/tabla-empleados.component';
-import { ModalEmpleadosComponent } from './modal-empleados/modal-empleados.component';
-import { CardModule } from 'primeng/card';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { CalendarModule } from 'primeng/calendar';
-import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
+import { EmpleadosRoutes } from './empleados.routing';
+import { ModalEmpleadosComponent } from './modal-empleados/modal-empleados.component';
+import { TablaEmpleadosComponent } from './tabla-empleados/tabla-empleados.component';
 
 @NgModule({
-  declarations: [
-    TablaEmpleadosComponent,
-    ModalEmpleadosComponent
-  ],
   imports: [
     CommonModule,
     EmpleadosRoutes,
@@ -27,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     InputTextModule,
     RadioButtonModule,
     CalendarModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
+  declarations: [TablaEmpleadosComponent, ModalEmpleadosComponent],
 })
-export class EmpleadosModule { }
+export class EmpleadosModule {}

@@ -1,0 +1,92 @@
+<!-- FORMULARIO DE CONTACTO -->
+
+<div
+  class="grid flex-column h-full p-3 justify-content-center align-content-center"
+>
+  <p-card [header]="titulo" [style]="{ width: '1000px' }">
+    <div class="grid">
+      <div class="col-6">
+        <div class="grid">
+          <div class="col-6">
+            <p-floatLabel>
+              <input
+                pInputText
+                id="nombre"
+                [(ngModel)]="formulario.nombre"
+                class="w-full"
+              />
+              <label for="nombre">Nombre</label>
+            </p-floatLabel>
+          </div>
+          <div class="col-6">
+            <p-floatLabel>
+              <input
+                pInputText
+                id="apellido"
+                [(ngModel)]="formulario.apellido"
+                class="w-full"
+              />
+              <label for="apellido">Apellido</label>
+            </p-floatLabel>
+          </div>
+          <div class="col-6">
+            <p-floatLabel>
+              <input
+                pInputText
+                id="correo"
+                [(ngModel)]="formulario.correo"
+                class="w-full"
+              />
+              <label for="correo">Correo</label>
+            </p-floatLabel>
+          </div>
+          <div class="col-6">
+            <p-floatLabel>
+              <input
+                pInputText
+                id="asunto"
+                [(ngModel)]="formulario.asunto"
+                class="w-full"
+              />
+              <label for="asunto">Asunto</label>
+            </p-floatLabel>
+          </div>
+          <div class="col-12">
+            <p-floatLabel>
+              <textarea id="float-input" rows="10" class="w-full" pInputTextarea [(ngModel)]="formulario.mensaje">
+              </textarea>
+              <label for="mensaje">Mensaje</label>
+            </p-floatLabel>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!-- INFORMACION DE UBICACION Y CONTACTO -->
+
+        <div class="grid">
+          <div class="col-12">
+            <p-image
+              src="https://cdn-3.expansion.mx/dims4/default/dd95902/2147483647/strip/true/crop/1000x600+0+0/resize/1200x720!/quality/90/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F9b%2F24%2F888b85b14b3292c4e71938a5b625%2Fcinepolis-klic.jpg"
+              alt="Image"
+              width="100%"
+              height="300"
+              imageClass="border-round"
+            ></p-image>
+          </div>
+          <div class="col-12">
+            <div class="grid">
+              <div
+                class="col-12 flex-1 justify-content-center align-content-center"
+              >
+                <div class="text-center">TIENDA DE PELICULAS</div>
+                <div class="text-center">contacto&#64;peliculas.com.mx</div>
+                <div class="text-center">4771640325</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+```

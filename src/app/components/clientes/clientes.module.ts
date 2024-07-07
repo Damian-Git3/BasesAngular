@@ -11,10 +11,6 @@ import { ModalClienteComponent } from './modal-cliente/modal-cliente.component';
 import { TablaClientesComponent } from './tabla-clientes/tabla-clientes.component';
 
 @NgModule({
-  declarations: [
-    TablaClientesComponent,
-    ModalClienteComponent
-  ],
   imports: [
     CommonModule,
     ClientesRoutes,
@@ -23,7 +19,8 @@ import { TablaClientesComponent } from './tabla-clientes/tabla-clientes.componen
     ButtonModule,
     DialogModule,
     InputTextModule,
-    TableModule
+    TableModule,
   ],
+  declarations: [TablaClientesComponent, ModalClienteComponent],
 })
-export class ClientesModule { }
+export class ClientesModule {}

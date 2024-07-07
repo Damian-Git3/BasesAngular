@@ -1,0 +1,51 @@
+<div class="h-full block">
+  <div class="flex flex-column h-full">
+    <div class="p-2 w-full">
+      <p-toolbar>
+        <div class="p-toolbar-group-start">
+
+          <p-chip label="{{categoria}}" *ngFor="let categoria of categorias" (click)="filtrarPorCategoria(categoria)" />
+        </div>
+        <div class="p-toolbar-group-center">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText placeholder="Search" (input)="filtrarPeliculas($event)" />
+          </span>
+        </div>
+        <div class="p-toolbar-group-end">
+             <p-button label="Recargar" icon="pi pi-refresh" (click)="cargarPeliculas()" />
+        </div>
+      </p-toolbar>
+    </div>
+
+    <div class="flex-1 block overflow-y-auto">
+      <div class="h-100 grid m-0">
+        <div class="col-3 p-5 border-round" *ngFor="let p of peliculasFiltradas">
+          <p-card
+            header="{{ p.titulo }}"
+            subheader="{{ p.anio }}"
+            styleClass="border-round"
+          >
+            <ng-template pTemplate="header">
+              <img
+                alt="Card"
+                src="{{ p.imagen }}"
+                style="border-radius: 6px 6px 0 0"
+              />
+            </ng-template>
+            <p>{{ p.sinopsis }}</p>
+            <ng-template pTemplate="footer">
+              <div class="flex gap-3 mt-1">
+
+                <p-chip label="{{categoria}}" *ngFor="let categoria of convertirCategorias(p.categorias)" />
+
+              </div>
+            </ng-template>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal-productos (relaad)="(null)" #modalProductos></app-modal-productos>

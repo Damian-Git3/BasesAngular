@@ -1,3 +1,47 @@
-<p>
-  tabla-tareas works!
-</p>
+<p-card header="TAREAS">
+  <p-table [value]="tareas" [paginator]="true" [rows]="5">
+
+    <ng-template pTemplate="caption">
+      <div class="grid">
+        <div class="col-1">
+          <p-button
+            icon="pi pi-plus-circle"
+            label="AGREGAR"
+            (click)="modalTareas.show()"
+          ></p-button>
+        </div>
+        <div class="col-1">
+          <p-button
+            icon="pi pi-refresh"
+            label=""
+            (click)="listarTareas()"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">NOMBRE</th>
+        <th class="text-center">ACCIONES</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-tarea>
+      <tr (dblclick)="modalTareas.show(tarea)">
+        <td>{{ tarea.idTarea }}</td>
+        <td>{{ tarea.nombre }}</td>
+        <td>
+          <p-button
+            icon="pi pi-trash"
+            (onClick)="eliminarTarea(tarea.idTarea)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</p-card>
+
+<app-modal-tareas (reload)="listarTareas()" #modalTareas></app-modal-tareas>

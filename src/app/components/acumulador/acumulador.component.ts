@@ -13,7 +13,7 @@ export class AcumuladorComponent {
 
   numero : number = 2;
 
-  duplicar() {
+  duplicar(): void {
     this.numero *= 2;
   }
 
@@ -25,4 +25,7 @@ export class AcumuladorComponent {
     this.numero = 2;
   }
 
+  searchProducts(texto: any): void {
+    console.log('Buscando productos...');
+  }
 }

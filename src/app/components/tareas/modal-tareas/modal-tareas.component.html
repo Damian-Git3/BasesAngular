@@ -1,0 +1,28 @@
+<p-dialog
+[header]="titulo"
+  [modal]="true"
+  [closable]="true"
+  [closeOnEscape]="true"
+  [(visible)]="display"
+  >
+
+  <div class="field">
+    <label for="nombre">NOMBRE</label>
+    <input
+      pInputText
+      [(ngModel)]="tarea.nombre"
+      id="nombre"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+
+  <div class="field grid gap-1 justify-content-center">
+    <button
+      pButton
+      [label]="btnLabel"
+      (click)="actualizar ? actualizarTarea() : guardar()"
+    ></button>
+    <p-button (click)="hide()" label="CERRAR"></p-button>
+  </div>
+</p-dialog>
